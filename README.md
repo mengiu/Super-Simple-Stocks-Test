@@ -1,5 +1,5 @@
 # Super Simple Stocks Test
- Super simple stocks is an application to manage trades on a set of stocks and it's a technical test as part of 
+ Super simple stocks Test is an application to manage trades on a set of stocks and it's a technical test as part of 
  the hiring process for a very important company.
  
  ### 1. Assignment Description
@@ -43,6 +43,8 @@
  
  ##### Architecture and Assumptions
  
+ I used for this project JPA ( implemented by HiperLink ) to implement the persistence layer. 
+ I used H2 database engine so 
  In a _**S**ervice **O**riented **A**rchitecture (**SOA**)_, a software application is designed 
  by defining components, which provides services to other components in other applications. Typically, 
  those services are available to be consumed using a network through some specifics communication 
@@ -65,14 +67,10 @@
 
  The Maven project is composed by a father maven project ( named container ) and 2 modules maven named
  super-simple-stock and web-app.
+ The easiest way to run the sample is using maven command mvn package jetty:run.
  
  Spring give a powerful pattern as Inversion of Control, which allows us to have a cleaner code, 
- aspect oriented programming AoP, etc. Although, Spring is used mainly as object container, 
- for example to inject the information of the stocks supported by the application and to configure 
- the data for the unit test, include other features of spring in the application is an straightforward 
- task. Enable the use of annotations, scan spring components in the code and place holder for 
- the properties are already done.
- 
+ aspect oriented programming AoP, etc.
  
  Although the approach is SOA, the implementation of the service is built as _**java library**_ as
  a jar artifact named _**web-app-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
