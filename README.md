@@ -182,7 +182,7 @@ public class SimpleStockJSONService {
 }
 
 ```
- Under you can see the response to the call at the method REST calculateGBCEAllShareIndex using clent REST "Chrome Poser"
+ Under you can see the response to the call at the method REST calculateGBCEAllShareIndex using client REST "Chrome Poser"
  
  
  ![Super Simple Stocks Test - Rest Method
