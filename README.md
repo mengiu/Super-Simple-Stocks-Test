@@ -62,6 +62,9 @@
  provides some powerful features in software development, someone of them as: 
  A easy and flexible way to build all artifacts in the project, generates quality reports, 
  execution and reporting of unit test, support for continuous integration development, etc.
+
+ The Maven project is composed by a project maven father ( named container ) and 2 modules maven named
+ super-simple-stock and web-app.
  
  Spring give a powerful pattern as Inversion of Control, which allows us to have a cleaner code, 
  aspect oriented programming AoP, etc. Although, Spring is used mainly as object container, 
