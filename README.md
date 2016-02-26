@@ -45,6 +45,8 @@
  
  I used for this project JPA ( implemented by HiperLink ) to implement the persistence layer. 
  I used H2 database engine so all data are held in memory ( responding to one of the constraints ).
+ I used Jetty as HTTP server, HTTP client, and javax.servlet container.
+ Jetty is an open-source project providing an HTTP server, HTTP client, and javax.servlet container.
 
  Following the SOA approach, the solution for the assignment is designed to provide the service 
  _**SimpleStockService**_, which has operations to calculate the dividend yield, P/E Ratio, 
