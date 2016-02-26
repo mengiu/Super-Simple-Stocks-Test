@@ -75,7 +75,7 @@
  
  
  Although the approach is SOA, the implementation of the service is built as _**java library**_ as
- a jar artifact named _**super-simple-stock-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
+ a jar artifact named _**web-app-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
  integration requirements, the simplest decision was to create a java library, which could be 
  integrated in all the JAVA technologies. We don't know if the requirements are oriented to integrate 
  the functionality within an existing web application just to complete the app, or they are intended to 
