@@ -71,14 +71,11 @@
  Although the approach is SOA, the implementation of the service is built as _**java library**_ as
  a jar artifact named _**web-app-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
  integration requirements, the simplest decision was to create a java library, which could be 
- integrated in all the JAVA technologies. We don't know if the requirements are oriented to integrate 
- the functionality within an existing web application just to complete the app, or they are intended to 
- be published as web services to be consumed by external systems or they will be integrated as part of 
- a SOA services choreography in a more complex system.
+ integrated in all the JAVA technologies. 
  
  The java library for this assignment is the more flexible solution with the current requirements. 
  For example, when an integration need shows up, specifying that an external stock market system wants 
- to know the information for the stocks in the Super Simple Stocks app. One option is to publish 
+ to know the information for the stocks in the Super Simple Stocks app. I published 
  the service in the library as a _**RESTful Web Service**_. 
  
  The design of the library will allow us to respond to this requirement very fast. To build a RESTful web 
