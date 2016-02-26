@@ -187,5 +187,8 @@ public class SimpleStockJSONService {
 }
 
 ```
+ Under you can see the response to the call at the method REST calculateGBCEAllShareIndex using clent REST "Chrome Poser"
  
- ![Super Simple Stocks Test - Rest Method Calling](https://github.com/mengiu/Super-Simple-Stocks-Test/blob/master/container/super-simple-stock/src/main/resources/images/testCallingMethodREST.png "Super Simple Stocks Test - Rest Method Calling")
+ 
+ ![Super Simple Stocks Test - Rest Method
+ Calling](https://github.com/mengiu/Super-Simple-Stocks-Test/blob/master/container/super-simple-stock/src/main/resources/images/testCallingMethodREST.png "Super Simple Stocks Test - Rest Method Calling")
