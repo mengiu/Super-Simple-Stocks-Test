@@ -74,12 +74,9 @@
  integrated in all the JAVA technologies. 
  
  The java library for this assignment is the more flexible solution with the current requirements. 
- For example, when an integration need shows up, specifying that an external stock market system wants 
- to know the information for the stocks in the Super Simple Stocks app. I published 
- the service in the library as a _**RESTful Web Service**_. 
+ I published the service in the library as a _**RESTful Web Service**_. 
  
- The design of the library will allow us to respond to this requirement very fast. To build a RESTful web 
- service I used Apache CFX framework.
+ To build a RESTful web service I used Apache CFX framework.
  Apache CXF is an open source services framework. CXF helps you build and develop services using frontend programming APIs, 
  like JAX-WS and JAX-RS. These services can speak a variety of protocols such as SOAP, XML/HTTP, RESTful HTTP, or 
  CORBA and work over a variety of transports such as HTTP, JMS or JBI.
