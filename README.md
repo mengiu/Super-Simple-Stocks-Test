@@ -44,7 +44,8 @@
  ##### Architecture and Assumptions
  
  I used for this project JPA ( implemented by HiperLink ) to implement the persistence layer. 
- I used H2 database engine so 
+ I used H2 database engine so all data are held in memory ( responding to one of the constraints ).
+
  In a _**S**ervice **O**riented **A**rchitecture (**SOA**)_, a software application is designed 
  by defining components, which provides services to other components in other applications. Typically, 
  those services are available to be consumed using a network through some specifics communication 
