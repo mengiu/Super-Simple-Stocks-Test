@@ -46,13 +46,6 @@
  I used for this project JPA ( implemented by HiperLink ) to implement the persistence layer. 
  I used H2 database engine so all data are held in memory ( responding to one of the constraints ).
 
- In a _**S**ervice **O**riented **A**rchitecture (**SOA**)_, a software application is designed 
- by defining components, which provides services to other components in other applications. Typically, 
- those services are available to be consumed using a network through some specifics communication 
- protocols. By definition a _**service**_ is a self-contained component, which offer a specific 
- functionality and could be designed to perform one or more operations. This make possible reuse 
- code just changing the way the service interoperates with other services.
- 
  Following the SOA approach, the solution for the assignment is designed to provide the service 
  _**SimpleStockService**_, which has operations to calculate the dividend yield, P/E Ratio, 
  Stock Price and record trades for a given stock. Besides, the service provides an operation 
