@@ -1,4 +1,4 @@
-# Super Simple Stocks
+# Super Simple Stocks 
  Super simple stocks is an application to manage trades on a set of stocks and it's a technical test as part of 
  the hiring process for a very important company.
  
@@ -70,7 +70,6 @@
  task. Enable the use of annotations, scan spring components in the code and place holder for 
  the properties are already done.
  
- ![Super Simple Stocks - Architecture of Solution](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-architecture.png "Super Simple Stocks - Architecture of Solution")
  
  Although the approach is SOA, the implementation of the service is built as _**java library**_ as
  a jar artifact named _**super-simple-stock-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
@@ -82,60 +81,10 @@
  
  The java library for this assignment is the more flexible solution with the current requirements. 
  For example, when an integration need shows up, specifying that an external stock market system wants 
- to know the information for the stocks in the Super Simple Stocks app. One option could be to publish 
+ to know the information for the stocks in the Super Simple Stocks app. One option is to publish 
  the service in the library as a _**RESTful Web Service**_. 
  
  The design of the library will allow us to respond to this requirement very fast. To build a RESTful web 
- service in Spring, the HTTP requests should be handled by a resource controller. A resource controller 
- is a simple POJO (Plain Old Java Object) identified by the **@RestController** annotation. 
- Each operation in the web service should be mapped with a method in the controller, which is accomplished
- using the **@RequestMapping** annotation. In the solution architecture, the resource controller class
- should be added in a new possible web service layer for integration purpose. The next snippet of code 
- shows the resource controller to new 
- integration requirement:
+ service using Apache CFX.
  
- ```java
- package com.jpmorgan.stocks.simple.integration.ws.rest;
  
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RequestParam;
- import org.springframework.web.bind.annotation.RestController;
- 
- @RestController
- public class SimpleStocServiceController {
- 
-     @RequestMapping("/calculateDividendYield")
-     public calculateDividendYield(@RequestParam(value="stock", defaultValue="") String stockSymbol) {
- 		// Get the simple stcok service from the factory
- 		SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
- 		
- 		// Delegates the work to the java library
- 		return simpleStockService.calculateDividendYield(stockSymbol);
-     }
- }
- ```
- Quite simple. Related to deployment aspects, we should make some changes in the maven 
- configuration if we want to generate a war file instead a jar, for example, but those changes
- are small. So, with maven as project management tool we have many possibilities to generate 
- all the artifacts, as we need it.
- 
- ##### Technical Design
- 
- The first technical decision in our implementation strategy is to provide a unique access to all services in the application. This is accomplished by defining the component **SimpleStockServicesFactory**, which implements the factory pattern and acts as the interface to create all services in the Super Simple Stocks application. The services built by the factory are considered as _**border services**_ and they will be the entry point to the business functionalities for all the external applications that wants to integrate with the stocks library. Each border service is mapped to one unique method in the class SimpleStockServicesFactory to creates the corresponding service instance, using as helper the service _**SpringService**_. This service is responsible to load the Spring context making available all services, architecture components, business model objects and utils defined to support the business functionalities. Additionally, provides a generic mechanism to gets all the beans configured in the Spring context.
- 
-  
-  ![Super Simple Stocks - Technical Design Modeling](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-model.png "Super Simple Stocks - Technical Design Modeling")
-  
- -For this technical test, the factory component just has one method _**getSimpleStockService**_, that creates a singleton instance of the **SimpleStockService**, which is the main service in the app and contains all method for the calculations. The class SimpleStocksServicesFactoryImpl is the implementation of the factory and implements a thread safe singleton pattern proposed by Bill Puigh. The next snippet of code ilustrates how to use the factory to create a service:
- +For this technical test, the factory component just has one method _**getSimpleStockService**_, that creates a singleton instance of the **SimpleStockService**, which is the main service in the app and contains all method for the calculations. The class SimpleStocksServicesFactoryImpl is the implementation of the factory and implements a thread safe singleton pattern proposed by Bill Pugh. The next snippet of code ilustrates how to use the factory to create a service:
-  
-  ```java
-  SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
- @@ -134,7 +134,7 @@ SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getS
-  
-  As all services are configured in the Spring framework, there are many possibilities to design and build the structure of the services, but for this application we have defined that the border services only can use the services in the backend layer. So, The service _**StocksEntityManager**_, is injected by IoC into the border service SimpleStockService. As one of the constraints of the technical test is 'no database', the entity manager service represents the persistence layer of the application holding all data in memory and providing the methods to recover and store socks and trades in the app. The SimpleStocksService use the entity manager to simulate the database operations for the stocks application.
-  
- -Finally, the **SimpleStockServiceImpl** implements all the functionalities coding the bussiness rules to make the calculations of the dividend yield, P/E Ratio, stock price, and GBCE All Share índex.
- +Finally, the **SimpleStockServiceImpl** implements all the functionalities coding the bussiness rules to make the calculations of the dividend yield, P/E Ratio, stock price, and GBCE All Share index.
-  
-  ##### Unit Test
