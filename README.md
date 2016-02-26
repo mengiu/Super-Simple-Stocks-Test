@@ -90,4 +90,4 @@
  like JAX-WS and JAX-RS. These services can speak a variety of protocols such as SOAP, XML/HTTP, RESTful HTTP, or 
  CORBA and work over a variety of transports such as HTTP, JMS or JBI.
  
- ![Super Simple Stocks Test - Rest Method Calling](https://github.com/mengiu/Super-Simple-Stocks-Tesr/blob/master/container/super-simple-stock/src/main/resources/images/testCallingMethodREST.png "Super Simple Stocks Test - Rest Method Calling")
+ ![Super Simple Stocks Test - Rest Method Calling](https://github.com/mengiu/Super-Simple-Stocks-Test/blob/master/container/super-simple-stock/src/main/resources/images/testCallingMethodREST.png "Super Simple Stocks Test - Rest Method Calling")
