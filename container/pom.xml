@@ -24,7 +24,7 @@
 		<commons.collections.version>3.2.1</commons.collections.version>
 		<commons.math3.version>3.0</commons.math3.version>
 		<log4j.version>1.2.17</log4j.version>
-		<junit.version>4.8.1</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<vaadin.version>6.8.13</vaadin.version>		
 	</properties>
     <modules>
